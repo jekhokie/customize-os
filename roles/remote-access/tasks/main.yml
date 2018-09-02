@@ -1,0 +1,6 @@
+---
+- name: install remote access packages
+  package:
+    name: openssh-server
+    state: present
+...

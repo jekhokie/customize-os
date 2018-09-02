@@ -1,0 +1,9 @@
+---
+- name: install remote access packages
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - nmap
+    - aircrack-ng
+...

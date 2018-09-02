@@ -1,0 +1,25 @@
+---
+- name: install desired packages
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - vim
+    - git
+    - tmux
+
+- name: copy home directory dotfiles and such
+  delegate_to: localhost
+  copy:
+    src: "{{ item }}"
+    dest: "{{ user_home }}/{{ item }}"
+    owner: "{{ user_id }}"
+  with_items:
+    - .bash_profile
+    - .vimrc
+    - .tmux.conf
+    - .gitconfig
+    - .vim/
+    - .completion_scripts/
+    - .prompt_scripts/
+...

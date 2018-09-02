@@ -1,0 +1,13 @@
+---
+- name: jkarimi customized OS configuration
+  hosts: 127.0.0.1
+  connection: local
+  become: yes
+  roles:
+  - secure-os
+  - personal
+  - remote-access
+  - network-tools
+  - python-dev
+  - nodejs-dev
+...

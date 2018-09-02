@@ -1,0 +1,13 @@
+---
+- name: install desired packages
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - python-pip
+
+- name: install virtualenv
+  command: pip install virtualenv
+  args:
+    creates: /usr/local/bin/virtualenv
+...

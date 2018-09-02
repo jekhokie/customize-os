@@ -17,13 +17,6 @@ echo -n "These steps would be for Ubuntu 16.04 on a Dell XPS 420 system [y/n]: "
 read needBroadcom
 
 if [[ $needBroadcom =~ [y|Y] ]]; then
-    mkdir $depsDir
-    echo "Please download the following packages and place them into the broadcom-deps/ directory in this"
-    echo "current directory (where this script is being run from)"
-    echo "    http://ftp.us.debian.org/debian/pool/contrib/b/b43-fwcutter/$broadcomFwCutter"
-    echo "    http://www.lwfinger.com/b43-firmware/$broadcomWl"
-    read -p "PRESS ENTER WHEN PACKAGES ARE IN PLACE"
-
     echo "Installing required drivers and dependencies..."
     apt-get purge bcmwl-kernel-source
     dpkg -i $depsDir/$broadcomFwCutter

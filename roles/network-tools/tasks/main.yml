@@ -6,4 +6,5 @@
   with_items:
     - nmap
     - aircrack-ng
+    - curl
 ...
